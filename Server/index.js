@@ -8,13 +8,20 @@ const passport=require('passport')
 const session =require('express-session')
 
 server.use(express.json())
-server.use(cors(
-{  origin:"https://wonderful-phoenix-85e436.netlify.app"
-}))
+// server.use(cors({  
+//   origin:"https://wonderful-phoenix-85e436.netlify.app"
+// }))
 
 server.use(morgan('dev'))
 // database
 db();
+
+server.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://wonderful-phoenix-85e436.netlify.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 // setup port for server app
 const PORT=process.env.PORT || 5000
