@@ -1,10 +1,9 @@
 const express=require('express')
 const cors=require('cors')
-const dotenv=require('dotenv')
+const dotenv=require('dotenv').config()
 const morgan=require("morgan")
 const db=require('./config/db')
 const server=express()
-dotenv.config()
 const passport=require('passport')
 const session =require('express-session')
 
