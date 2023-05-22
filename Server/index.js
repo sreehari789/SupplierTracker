@@ -8,16 +8,16 @@ const passport=require('passport')
 const session =require('express-session')
 
 server.use(express.json())
-server.use(cors({
-    origin:'http://localhost:3000'
-}))
+server.use(cors(
+  origin="https://wonderful-phoenix-85e436.netlify.app"
+))
 
 server.use(morgan('dev'))
 // database
 db();
 
 // setup port for server app
-const PORT=process.env.PORT
+const PORT=process.env.PORT || 5000
 server.listen(PORT,()=>{
     console.log(`server started at ${PORT}`);
 })
