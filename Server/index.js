@@ -9,7 +9,7 @@ const session =require('express-session')
 
 server.use(express.json())
 server.use(cors(
-  origin="https://wonderful-phoenix-85e436.netlify.app"
+  origin="https://wonderful-phoenix-85e436.netlify.app/"
 ))
 
 server.use(morgan('dev'))
